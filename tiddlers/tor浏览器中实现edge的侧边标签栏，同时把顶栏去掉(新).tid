@@ -1,0 +1,14 @@
+created: 20230331133425426
+creator: a15355447898a
+modified: 20230331133452801
+modifier: a15355447898a
+title: tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(新)
+type: text/vnd.tiddlywiki
+
+''因为Tab Center Reborn插件的更新,[[tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(旧)]]中插件的CSS不能再使用了''
+
+所以目前只能使用[[tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(旧)]]这个方案中的浏览器CSS部分,插件的那部分不能够使用
+
+目前我的解决方案是换一个插件,使用 [[Visual Tabs | https://addons.mozilla.org/en-US/firefox/addon/visualtab/]]
+
+另外有群友推荐了[[Firefox Vertical Tabs | https://github.com/ranmaru22/firefox-vertical-tabs/]]项目,不过我还没有尝试过
