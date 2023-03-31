@@ -1,6 +1,6 @@
 created: 20230313120449634
 creator: 孙文彬
-modified: 20230316050709397
+modified: 20230331050405677
 modifier: a15355447898a
 tags: 
 title: 目录
@@ -15,3 +15,5 @@ TODO [[对傲腾硬盘的思考]]
 [[tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(旧)]]
 
 TODO [[tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(新)]]
+
+[[Index]] [[GettingStarted]]
