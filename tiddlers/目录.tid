@@ -1,19 +1,23 @@
 created: 20230313120449634
 creator: 孙文彬
-modified: 20230331050405677
+modified: 20230405141420817
 modifier: a15355447898a
 tags: 
 title: 目录
 type: text/vnd.tiddlywiki
 
-[[暗影骑士擎pro,安装archlinux记录]]
+DONE
 
-[[使用lvm-btrfs-zfs方案安装archlinux]]
+* [[暗影骑士擎pro,安装archlinux记录]]
 
-TODO [[对傲腾硬盘的思考]]
+* [[使用lvm-btrfs-zfs方案安装archlinux]]
 
-[[tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(旧)]]
+* [[tor(firefox)浏览器中实现edge的侧边标签栏，同时把顶栏去掉(旧)]]
 
-TODO [[tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(新)]]
+* [[tor(firefox)浏览器中实现edge的侧边标签栏，同时把顶栏去掉(新)]]
+
+TODO
+
+* [[对傲腾硬盘的思考]]
 
 [[Index]] [[GettingStarted]]
