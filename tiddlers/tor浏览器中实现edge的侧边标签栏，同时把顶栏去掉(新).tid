@@ -1,6 +1,6 @@
 created: 20230331133425426
 creator: a15355447898a
-modified: 20230405140840457
+modified: 20230405141144849
 modifier: a15355447898a
 title: tor浏览器中实现edge的侧边标签栏，同时把顶栏去掉(新)
 type: text/vnd.tiddlywiki
@@ -12,3 +12,5 @@ type: text/vnd.tiddlywiki
 目前我的解决方案是换一个插件,使用 [[Visual Tabs|https://addons.mozilla.org/en-US/firefox/addon/visualtab/]]
 
 另外有群友推荐了[[Firefox Vertical Tabs|https://github.com/ranmaru22/firefox-vertical-tabs/]]项目,不过我还没有尝试过
+
+补充:上面这个项目似乎要配合[[Hovertext-Css|https://github.com/Graklinghunter/Hovertext-Css]]这个项目使用
