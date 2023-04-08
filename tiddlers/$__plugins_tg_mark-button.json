@@ -1,0 +1,169 @@
+{
+    "tiddlers": {
+        "$:/language/Marklets/Blue": {
+            "text": "@@.tgb ",
+            "title": "$:/language/Marklets/Blue",
+            "tags": "$:/tags/TextEditor/Marklet",
+            "modifier": "TonGerner",
+            "modified": "20201003193637106",
+            "creator": "TonGerner",
+            "created": "20180203112600010",
+            "caption": "Text color Blue"
+        },
+        "$:/language/Marklets/Highlight-cyan": {
+            "text": "@@.tgc ",
+            "title": "$:/language/Marklets/Highlight-cyan",
+            "tags": "$:/tags/TextEditor/Marklet",
+            "modifier": "TonGerner",
+            "modified": "20201003193646489",
+            "creator": "TonGerner",
+            "created": "20180201205802625",
+            "caption": "Highlight cyan"
+        },
+        "$:/language/Marklets/Highlight-yellow": {
+            "text": "@@.tgy ",
+            "title": "$:/language/Marklets/Highlight-yellow",
+            "tags": "$:/tags/TextEditor/Marklet",
+            "modifier": "TonGerner",
+            "modified": "20201003194022227",
+            "creator": "TonGerner",
+            "created": "20180201165042434",
+            "caption": "Highlight yellow"
+        },
+        "$:/language/Marklets/Red": {
+            "text": "@@.tgr ",
+            "title": "$:/language/Marklets/Red",
+            "tags": "$:/tags/TextEditor/Marklet",
+            "modifier": "TonGerner",
+            "modified": "20201003193704852",
+            "creator": "TonGerner",
+            "created": "20180201204850524",
+            "caption": "Text color Red"
+        },
+        "$:/language/Marklets/White-on-red": {
+            "text": "@@.tgwr ",
+            "title": "$:/language/Marklets/White-on-red",
+            "tags": "$:/tags/TextEditor/Marklet",
+            "modifier": "TonGerner",
+            "modified": "20201003193714160",
+            "creator": "TonGerner",
+            "created": "20180203112012082",
+            "caption": "Text color White on Red"
+        },
+        "$:/core/ui/EditorToolbar/mark": {
+            "created": "20180201153958562",
+            "text": "",
+            "title": "$:/core/ui/EditorToolbar/mark",
+            "tags": "$:/tags/EditorToolbar",
+            "shortcuts": "((mark))",
+            "modified": "20181106165621687",
+            "icon": "$:/core/images/mark",
+            "dropdown": "$:/core/ui/EditorToolbar/mark-dropdown",
+            "description": "{{$:/language/Buttons/Mark/Hint}}",
+            "condition": "[<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]",
+            "caption": "{{$:/language/Buttons/Mark/Caption}}"
+        },
+        "$:/core/ui/EditorToolbar/mark-dropdown": {
+            "text": "\\define toolbar-button-mark-inner()\n<$button tag=\"a\">\n\n<$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"wrap-selection\"\n\tprefix={{$(snippetTitle)$}}\n\tsuffix=\"@@\"\n/>\n\n<$action-deletetiddler\n\t$tiddler=<<dropdown-state>>\n/>\n\n<$view tiddler=<<snippetTitle>> field=\"caption\" mode=\"inline\">\n\n<$view tiddler=<<snippetTitle>> field=\"title\" mode=\"inline\"/>\n\n</$view>\n\n</$button>\n\\end\n\n<$list filter=\"[all[shadows+tiddlers]tag[$:/tags/TextEditor/Marklet]!has[draft.of]sort[caption]]\" variable=\"snippetTitle\">\n\n<<toolbar-button-mark-inner>>\n\n</$list>\n\n----\n\n<$button tag=\"a\">\n\n<$action-sendmessage\n\t$message=\"tm-new-tiddler\"\n\ttags=\"$:/tags/TextEditor/Marklet\"\n\tcaption={{$:/language/Buttons/Mark/New/Title}}\n\ttext={{$:/language/Buttons/Mark/New/Text}}\n/>\n\n<$action-deletetiddler\n\t$tiddler=<<dropdown-state>>\n/>\n\n<em>\n\n<$text text={{$:/language/Buttons/Mark/Caption/New}}/>\n\n</em>\n\n</$button>\n",
+            "title": "$:/core/ui/EditorToolbar/mark-dropdown",
+            "tags": "",
+            "modified": "20180201204624807",
+            "created": "20180201154415737"
+        },
+        "$:/core/images/mark": {
+            "created": "20180201154905475",
+            "text": "<svg class=\"tgc-mark tc-image-button\" height=\"22pt\" width=\"22pt\" viewBox=\"0 0 90 90\">\n  <path d=\"m40.7,86.6l-35.3,0c-2.8,0 -5,-2.2 -5,-5s2.2,-5 5,-5l35.3,0c2.8,0 5,2.2 5,5s-2.3,5 -5,5z\" fill=\"red\"/>\n  <path d=\"m58,78.2c-0.7,0 -1.4,-0.1 -2,-0.4l-25,-11.1c-2.5,-1.1 -3.7,-4.1 -2.5,-6.6c1.1,-2.5 4.1,-3.7 6.6,-2.5l24.9,11c2.5,1.1 3.7,4.1 2.5,6.6c-0.8,1.9 -2.6,3 -4.5,3z\"/>\n  <path d=\"m40.5,86.6c-1.6,0 -2.5,-0.4 -3.1,-0.7c-1.7,-0.8 -6.3,-2.8 -9,-21.6c-0.4,-2.8 -2.3,-17.3 0.1,-22.7l12.9,-28.9c1.7,-3.8 4.8,-6.7 8.7,-8.2c3.9,-1.5 8.1,-1.4 12,0.3l19.2,8.6c2.5,1.1 3.7,4.1 2.5,6.6c-1.1,2.5 -4.1,3.7 -6.6,2.5l-19.2,-8.6c-1.4,-0.6 -2.9,-0.7 -4.3,-0.1c-1.4,0.5 -2.5,1.6 -3.1,3l-12.9,28.9c-0.4,1.1 -0.7,7.1 0.5,16.1c1,7.8 2.5,12.6 3.5,14.6c2.1,-0.6 6.7,-2.7 13.2,-7.2c7.5,-5.1 11.7,-9.3 12.3,-10.5l12.8,-28.8c1.1,-2.5 4.1,-3.7 6.6,-2.5c2.5,1.1 3.7,4.1 2.5,6.6l-12.8,28.9c-2.4,5.5 -14.4,13.7 -16.8,15.3c-10.4,6.9 -15.9,8.4 -19,8.4z\"/>\n</svg>",
+            "title": "$:/core/images/mark",
+            "tags": "$:/tags/Image",
+            "modified": "20180225121759458"
+        },
+        "$:/language/Buttons/Mark/Hint": {
+            "text": "Wrap marking around selected text",
+            "title": "$:/language/Buttons/Mark/Hint",
+            "tags": "",
+            "modified": "20180202085332009",
+            "created": "20180201203856122"
+        },
+        "$:/language/Buttons/Mark/Caption": {
+            "text": "mark",
+            "title": "$:/language/Buttons/Mark/Caption",
+            "tags": "",
+            "modified": "20180201203753667",
+            "created": "20180201203736513"
+        },
+        "$:/config/shortcuts/mark": {
+            "text": "Ctrl+J",
+            "title": "$:/config/shortcuts/mark",
+            "modified": "20180203171849169",
+            "created": "20180203171812538"
+        },
+        "$:/config/ShortcutInfo/mark": {
+            "text": "{{$:/language/Buttons/Mark/Hint}}",
+            "title": "$:/config/ShortcutInfo/mark",
+            "tags": "",
+            "modified": "20180202085255573",
+            "created": "20180202085229894"
+        },
+        "$:/language/Buttons/Mark/Caption/New": {
+            "text": "Add your own",
+            "title": "$:/language/Buttons/Mark/Caption/New",
+            "tags": "",
+            "modified": "20180201203825341",
+            "created": "20180201203813638"
+        },
+        "$:/language/Buttons/Mark/New/Text": {
+            "text": "* The only thing you have to add here is a CSS class prefixed by `@@`, e.g: `@@.xyz ` (note the extra space at the end)\n** The closing `@@` will be added automatically upon applying the 'mark'.\n* Define the class in $:/plugins/tg/mark-button/styles, e.g. `.xyx {color: Purple;}`\n* Add a descriptive title in the caption field of this tiddler, e.g. 'Text color Purple'\n* Add a appropriate title to this tiddler\n* Save this tiddler\n",
+            "title": "$:/language/Buttons/Mark/New/Text",
+            "tags": "",
+            "modifier": "TonGerner",
+            "modified": "20201227120712661",
+            "creator": "TonGerner",
+            "created": "20180201203941132"
+        },
+        "$:/language/Buttons/Mark/New/Title": {
+            "text": "Name as shown in menu",
+            "title": "$:/language/Buttons/Mark/New/Title",
+            "tags": "",
+            "modified": "20180201204039961",
+            "created": "20180201204029720"
+        },
+        "$:/language/Marklets/Highlight-lightcyan": {
+            "text": "@@.tglc ",
+            "title": "$:/language/Marklets/Highlight-lightcyan",
+            "tags": "$:/tags/TextEditor/Marklet",
+            "modifier": "TonGerner",
+            "modified": "20201003193655469",
+            "creator": "TonGerner",
+            "created": "20191230202243900",
+            "caption": "Highlight LightCyan"
+        },
+        "$:/plugins/tg/mark-button/readme": {
+            "created": "20180203172237667",
+            "creator": "TonGerner",
+            "text": "\\define icn(icon)\n<button class=\"tc-btn-invisible\"> {{$icon$}}</button>\n\\end\n\nA button (<<icn $:/core/images/mark>>) for the Editor toolbar that applies coloring / highlighting  to the selected text<br>\nAssigned shortcut: {{$:/config/shortcuts/mark}}\n\nTo decrease the added CSS (defined in `$:/language/Marklets/<color>`), classes have been defined in $:/plugins/tg/mark-button/styles:\n\n|Class |CSS ||h\n|`tgc` |`@@background-color:Cyan;`|@@.tgc text@@|\n|`tglc` |`@@background-color:LightCyan;`|@@.tglc text@@|\n|`tgy` |`@@background-color:Yellow;`|@@.tgy text@@|\n|`tgb` |`@@color:Blue;`|@@.tgb text@@|\n|`tgr` |`@@color:Red;`|@@.tgr text@@|\n|`tgwr` |`@@color:White;background-color:Red;`|@@.tgwr text@@|\n\nYou can add new entries via 'Add your own' in the dropdown menu.\n",
+            "title": "$:/plugins/tg/mark-button/readme",
+            "tags": "",
+            "modifier": "TonGerner",
+            "modified": "20210104195440015"
+        },
+        "$:/plugins/tg/mark-button/styles": {
+            "text": "/* Standard yellow highlight */\n.tgy {\n    background-color:Yellow;\n}\n/* Background color Cyan */\n.tgc {\n    background-color:Cyan;\n}\n/* Background color LightCyan */\n.tglc {\n    background-color:LightCyan;\n}\n/* Text color red */\n.tgr {\n    color:Red;\n}\n/* Text color blue */\n.tgb {\n    color:Blue;\n}\n/* White text on red background */\n.tgwr {\n    color:White;background-color:Red;\n}\n/* Purple text */\n.tgp {\n    color: Purple;\n}",
+            "type": "text/css",
+            "title": "$:/plugins/tg/mark-button/styles",
+            "tags": "$:/tags/Stylesheet",
+            "modifier": "TonGerner",
+            "modified": "20201003201624167",
+            "creator": "TonGerner",
+            "created": "20201002175020323"
+        },
+        "$:/plugins/tg/mark-button/license": {
+            "text": "[[Mark button|http://www.tongerner.nl/TW5/TW5_playground.html]] &copy; Ton Gerner &mdash; 2018-2021\n\nMIT License: https://opensource.org/licenses/MIT\n",
+            "title": "$:/plugins/tg/mark-button/license",
+            "tags": "",
+            "modifier": "TonGerner",
+            "modified": "20210104195609373",
+            "creator": "TonGerner",
+            "created": "20210104195504296"
+        }
+    }
+}
