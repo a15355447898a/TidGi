@@ -1,6 +1,6 @@
 created: 20230313120813939
 creator: 孙文彬
-modified: 20230408081703586
+modified: 20230408114251759
 modifier: a15355447898a
 tags: Linux
 title: 使用lvm-btrfs-zfs方案安装archlinux
@@ -167,7 +167,7 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc --localtime
 ```
-==如果你是用一个安装好的arch系统来安装arch,可以一起把下列命令运行==
+@@.tgy 如果你是用一个安装好的arch系统来安装arch,可以一起把下列命令运行@@
 
 ```bash
 timedatectl set-ntp 1
