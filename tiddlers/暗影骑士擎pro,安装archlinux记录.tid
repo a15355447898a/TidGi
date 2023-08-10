@@ -1,6 +1,6 @@
 created: 20230313120713300
 creator: 孙文彬
-modified: 20230408081652720
+modified: 20230810090942223
 modifier: a15355447898a
 tags: Linux
 title: 暗影骑士擎pro,安装archlinux记录
@@ -16,9 +16,9 @@ type: text/vnd.tiddlywiki
 
 !!! 准备一个u盘,制作启动u盘
 
-建议使用 `ventoy`​软件，`ventoy`​会把u盘分成两个分区
+建议使用 `ventoy` 软件，`ventoy` 会把u盘分成两个分区
 
-第一个分区可以格式化成 `exFAT`​，可以拷贝各种镜像;第二分区是 32MB 的VTOYEFI分区,不要动它
+第一个分区可以格式化成 `exFAT` ，可以拷贝各种镜像;第二分区是 32MB 的VTOYEFI分区,不要动它
 
 把前面下载的iso文件放入第一个分区
 
@@ -36,7 +36,7 @@ type: text/vnd.tiddlywiki
 
 开机的时候按f12进入选择菜单,选中你的u盘,回车
 
-在`ventoy`​菜单中选择arch的那一项
+在`ventoy` 菜单中选择arch的那一项
 
 !!! 联网
 
@@ -62,8 +62,8 @@ timedatectl set-ntp true
 
 !!! 分区
 
-* 先用 `lsblk`​查看硬盘设备
-* 再用`cfdisk`​分区
+* 先用 `lsblk` 查看硬盘设备
+* 再用`cfdisk` 分区
 * sdb1
 
   ** 1MB
@@ -122,7 +122,7 @@ mount /dev/sdb3 /mnt/home -o subvol=@home
 pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano neovim networkmanager btrfs-progs grub efibootmgr
 ```
 
-!!! 生成`fstab`​
+!!! 生成`fstab`
 
 ```bash
 genfstab -U /mnt > /mnt/etc/fstab
@@ -145,7 +145,7 @@ systemctl enable ntpd
 
 !!! 本地化设置
 
-移除  `/etc/locale.gen`​ 对应行前面的注释符号（＃）即可，建议选择带 UTF-8 的项
+移除 `/etc/locale.gen` 对应行前面的注释符号（＃）即可，建议选择带 UTF-8 的项
 
 ```bash
 /etc/locale.gen
@@ -154,7 +154,7 @@ en_US.UTF-8 UTF-8
 zh_CN.UTF-8 UTF-8
 ```
 
-然后创建`locale.conf`​文件，并编辑设定LANG变量，比如
+然后创建`locale.conf` 文件，并编辑设定LANG变量，比如
 
 ```bash
 /etc/locale.conf
@@ -180,9 +180,9 @@ echo Arch > /etc/hostname
 systemctl enable NetworkManager
 ```
 
-!!! `Initramfs`​配置
+!!! `Initramfs` 配置
 
-为了使 `btrfs check`​能够在挂载系统上使用
+为了使 `btrfs check` 能够在挂载系统上使用
 
 ```bash
 /etc/mkinitcpio.conf
@@ -191,13 +191,13 @@ MODULES=(btrfs)
 BINARIES=(btrfs)
 ```
 
-重新创建一个`Initramfs`​
+重新创建一个`Initramfs`
 
 ```
 mkinitcpio -p linux-zen
 ```
 
-!!! 设置`root`​密码
+!!! 设置`root`密码
 
 ```bash
 passwd
@@ -205,7 +205,7 @@ passwd
 
 !!! 安装微码更新
 
-安装 `microcode`​
+安装 `microcode`
 
 ```bash
 pacman -S intel-ucode amd-ucode
@@ -226,16 +226,16 @@ GRUB_DISABLE_OS_PROBER=false
 
 ```bash
 grub-install --target=i386-pc /dev/sdb
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=SunWenBinArch --removable
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --removable
 ```
 
-然后生成  `grub.cfg`​  文件
+然后生成 `grub.cfg` 文件
 
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-!!! 退出 `chroot`​环境，输入 `exit`​或者按 `Ctrl+d`​
+!!! 退出 `chroot` 环境，输入 `exit` 或者按 `Ctrl+d`
 
 !!! 卸载文件系统
 
@@ -247,7 +247,7 @@ umount -R /mnt
 
 !! 处理一些小事情
 
-!!! 添加`archlinuxcn`​源
+!!! 添加`archlinuxcn`源
 
 ```bash
 /etc/pacman.conf
@@ -256,13 +256,13 @@ umount -R /mnt
 Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
 ```
 
-安装`archlinuxcn-keyring`​
+安装`archlinuxcn-keyring`
 
 ```bash
 pacman -S archlinuxcn-keyring
 ```
 
-!!! 安装`paru`​
+!!! 安装`paru`
 
 ```bash
 pacman -S paru
@@ -275,14 +275,14 @@ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 pacman -S adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts  
 ```
 
-!!! 添加用户`arch`​(这里换成你想要的用户名)
+!!! 添加用户`arch`(这里换成你想要的用户名)
 
 ```bash
 useradd arch -U -G wheel -s /bin/bash -m 
 passwd arch
 ```
 
-!!! 添加`sudo`​权限
+!!! 添加`sudo`权限
 
 ```bash
 /etc/sudoers
@@ -321,7 +321,7 @@ pacman -S plasma-meta dolphin
 
 !! 解决双显卡问题
 
-!!! 添加内核参数`ibt=off`​
+!!! 添加内核参数`ibt=off`
 
 ```bash
 /etc/default/grub
@@ -329,26 +329,26 @@ pacman -S plasma-meta dolphin
 GRUB_CMDLINE_LINUX_DEFAULT="... ibt=off"
 ```
 
-然后再次生成  `grub.cfg`​  文件
+然后再次生成 `grub.cfg` 文件
 
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-!!! 安装n卡驱动与配置(使用`PRIME`​方案)
+!!! 安装n卡驱动与配置(使用`PRIME` 方案)
 
 > 具体参见 [ArchWiki PRIME](https://wiki.archlinux.org/index.php/PRIME!PRIME_render_offload)
 
-安装`nvidia`​包
+安装 `nvidia` 包
 
 ```bash
 pacman -S nvidia-dkms
 ```
 
-安装`nvidia-prime`​包来使用官方配置(不起作用的话,你就要去 Wiki 看怎么手动配置了,不过我觉得一般都不需要手动配置啦)
+安装`nvidia-prime`包来使用官方配置(不起作用的话,你就要去 Wiki 看怎么手动配置了,不过我觉得一般都不需要手动配置啦)
 
 ```bash
 pacman -S nvidia-prime
 ```
 
-这时候重启系统就应该起作用了，你可以通过`prime-run`​命令使指定程序在 NVIDIA 显卡上渲染
+这时候重启系统就应该起作用了，你可以通过`prime-run`命令使指定程序在 NVIDIA 显卡上渲染
