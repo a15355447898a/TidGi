@@ -4,7 +4,7 @@
 
 ## 我现在的网络拓扑
 
-![](https://s1.ax1x.com/2023/08/08/pPZZSUI.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZZSUI.png)
 
 ---
 
@@ -17,7 +17,7 @@
 然后准备openwrt系统,我直接从直接从[OpenWrt固件下载与在线定制编译 (supes.top)](https://supes.top/?version=22.03&target=rockchip%2Farmv8&id=friendlyarm_nanopi-r2s)构建了自己的openwrt
 
 选择如下
-![](https://s1.ax1x.com/2023/04/29/p91rpND.jpg)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p91rpND.jpg)
 
 互换默认网口的原因是默认的Wan口是USB3.0改装来的,网速不能千兆,不能让瓶颈出现在进入的位置
 
@@ -37,13 +37,13 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 网络-接口界面设置Lan口,使用自定义的DNS服务器,地址为访问 openwrt 的ip(后台地址)
 
-![](https://s1.ax1x.com/2023/04/29/p916u4O.png)
-![](https://s1.ax1x.com/2023/04/29/p916Q8e.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p916u4O.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p916Q8e.png)
 
 #### 关闭MWAN3分流服务
 
 我构建自己的 openwrt ,安装了MWAN3,但是我没找到他在那里,只找到一个MWAN,所以先跳过这一部分
-![](https://s1.ax1x.com/2023/04/29/p91cERg.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p91cERg.png)
 
 下面是教程中这一部分的操作
 > 检查服务内的【MWAN3分流服务】是否为关闭，该固件下默认为关闭；如果没有此插件即可无视得了
@@ -51,7 +51,7 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 #### 设置Turbo ACC Center
 
-![](https://s1.ax1x.com/2023/04/29/p91c6QH.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p91c6QH.png)
 
 
 #### 配置SmartDNS
@@ -67,12 +67,12 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 我设置国内对应`smartdns-China`,国外(第二DNS服务器)对应`smartdns-Overseas`
 
-![](https://s1.ax1x.com/2023/04/29/p91hrfP.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p91hrfP.png)
 
 
 #### 修改DHCP/DNS
 
-![](https://s1.ax1x.com/2023/04/29/p91cLmn.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/p91cLmn.png)
 
 (如果只是配置SmartDNS,就配置这个)
 
@@ -82,19 +82,19 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 #### 设置1745重定向
 
-![](https://s1.ax1x.com/2023/08/09/pPZd7gU.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZd7gU.png)
 
 #### 设置Adguard Home的上游DNS
 
 打开3000端口的Adguard Home网页管理界面,进入DNS设置
-![](https://s1.ax1x.com/2023/08/09/pPZwlrQ.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZwlrQ.png)
 
 设置上游DNS为SmartDNS
-![](https://s1.ax1x.com/2023/08/09/pPZwwMF.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZwwMF.png)
 
 #### 设置规则
 
-![](https://s1.ax1x.com/2023/08/09/pPZ0GOe.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZ0GOe.png)
 
 添加黑名单,我是用了这份[jhsvip/ADRuls: AdGuard Home 规则，整合了80多万条规则(github.com)](https://github.com/jhsvip/ADRuls)
 
@@ -107,11 +107,11 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 #### 设置运行模式与DNS
 
 设置运行模式为"绕过中国大陆ip",如果前面像我一样配置了SmartDNS,可以同时配置DNS
-![](https://s1.ax1x.com/2023/08/09/pPZ0Sds.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZ0Sds.png)
 
 #### 配置节点
 
-![](https://s1.ax1x.com/2023/08/09/pPZ0FzT.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPZ0FzT.png)
 
 
 
@@ -188,7 +188,7 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 因为考虑到需要配合SmartDNS和Adguard Home,选择Redir-Host(TUN模式)
 
-![](https://s1.ax1x.com/2023/08/10/pPej4r6.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPej4r6.png)
 
 #### 选择Meta内核
 
@@ -200,13 +200,13 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 #### DNS设置
 
-![](https://s1.ax1x.com/2023/08/10/pPev9Ig.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPev9Ig.png)
 
 #### ipv6
 
 我这里因为机场不支持ipv6,所以设置允许解析ipv6,但是不代理ipv6
 
-![](https://s1.ax1x.com/2023/08/10/pPexpOx.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPexpOx.png)
 
 #### 与SmartDNS和Adguard Home的配合
 
@@ -216,46 +216,46 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 `1745重定向`设置成`无`
 
-![](https://s1.ax1x.com/2023/08/10/pPevhWj.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPevhWj.png)
 
 ##### OpenClash
 
 勾选`自定义上游DNS服务器`
 
-![](https://s1.ax1x.com/2023/08/10/pPevoyq.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPevoyq.png)
 
 设置DNS服务器
 
 同界面往下滑,填写DNS服务器为本机,端口为Adguard Home的1745端口
 
-![](https://s1.ax1x.com/2023/08/10/pPevqTU.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPevqTU.png)
 
-![](https://s1.ax1x.com/2023/08/10/pPevXY4.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPevXY4.png)
 
 ---
 
 配置到这里之后,r2s的dns应该是这个样子的了:
-![](https://s1.ax1x.com/2023/08/10/pPmZjQf.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmZjQf.png)
 
 #### 下载内核
 
-![](https://s1.ax1x.com/2023/08/10/pPmPODs.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmPODs.png)
 
 滚动到下面,依次点击三个`检查并更新`,下载内核
 
-![](https://s1.ax1x.com/2023/08/10/pPmiC2F.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmiC2F.png)
 
 待左侧三个`当前内核版本`均变为绿色后再进行下一步
 
 #### 添加订阅配置
 
-![](https://s1.ax1x.com/2023/08/10/pPmFb0s.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmFb0s.png)
 
 ### Samba
 
 先对硬盘分区,然后根据固件的支持格式化文件系统(我选择了btrfs),挂载到/mnt下面,然后参考我的进行配置
 
-![](https://s1.ax1x.com/2023/08/10/pPmn6oQ.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmn6oQ.png)
 
 ### Aria2
 
@@ -267,13 +267,13 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 设置aria2开机自启动:`aria2c --conf-path=/mnt/mmcblk0p3/Aria2/config/aria2.conf.main &`
 
-![](https://s1.ax1x.com/2023/08/10/pPmuPFH.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmuPFH.png)
 
 然后查看aria2的web页面
 
-![](https://s1.ax1x.com/2023/08/10/pPmulfs.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmulfs.png)
 
-![](https://s1.ax1x.com/2023/08/10/pPmuDpR.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPmuDpR.png)
 
 如果看到红框处的内容,说明aria2启动成功,运行正常
 
@@ -281,15 +281,15 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 如下图开启,然后打开web控制界面
 
-![](https://s1.ax1x.com/2023/08/10/pPm1se0.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPm1se0.png)
 
 输入默认的账号密码后,如下进入管理界面
 
-![](https://s1.ax1x.com/2023/08/10/pPm3p0P.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPm3p0P.png)
 
 然后添加你想加的网盘或者本地驱动器,参考文档:[通用项 | AList文档 (nn.ci)](https://alist.nn.ci/zh/guide/drivers/common.html#排序相关)
 
-![](https://s1.ax1x.com/2023/08/10/pPm3Gc9.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPm3Gc9.png)
 
 ### Rclone
 
@@ -299,7 +299,7 @@ rclone的配置文件需要自己生成,所以需要先在本机上面[下载rcl
 
 完成后,在开机启动脚本里面加上这样一句:`/usr/bin/rclone rcd -vv --rc-web-gui --rc-web-gui-no-open-browser --rc-addr=10.0.0.1:5572 --rc-user=admin --rc-pass=admin --config=/root/.config/rclone/rclone.conf --rc-allow-origin=* --log-file=/var/log/rclone.log &`
 
-![](https://s1.ax1x.com/2023/08/10/pPm8JPS.png)
+![](https://cdn.jsdelivr.net/gh/a15355447898a/Blog-photos/pPm8JPS.png)
 
 然后浏览器访问`10.0.0.1:5572`,账号密码使用上面命令中的参数,全为`admin`
 
