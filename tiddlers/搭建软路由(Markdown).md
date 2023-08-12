@@ -1,10 +1,3 @@
-created: 20230812015405417
-creator: a15355447898a
-modified: 20230812020120001
-modifier: a15355447898a
-tags: 
-title: 搭建软路由(Markdown)
-
 # 软路由
 
 ---
@@ -128,6 +121,7 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
 
 - Redir-Host
     - 兼容模式
+    
       - > 信息来源:[常规设置 · vernesong/OpenClash Wiki (github.com)](https://github.com/vernesong/OpenClash/wiki/常规设置)
         >
         > 客户端进行通讯时DNS由Clash先进行并发查询，等待返回结果后再尝试进行规则判定和连接。
@@ -135,22 +129,27 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
         > 当判定需要代理时，使用fallback组DNS的查询结果进行通讯
         >
         > 实际效果：客户端响应速度一般，可能出现网页加载时间过长的情况。
+        
       - > 信息来源:ChatGPT
         >
         > 在此模式下，OpenClash会通过修改系统的DNS配置，将所有的DNS请求重定向到本地的Clash代理客户端。这样，所有的网络流量都会通过Clash进行代理。
     - TUN模式
+    
       - > 信息来源:[常规设置 · vernesong/OpenClash Wiki (github.com)](https://github.com/vernesong/OpenClash/wiki/常规设置)
         >
         > 此模式与Redir-Host（兼容）模式类似，不同在于能够代理所有UDP链接，提升nat等级，改善游戏联机体验。
+      
       - > 信息来源:ChatGPT
         >
         > 在这种模式下，OpenClash会创建一个虚拟网络接口（TUN接口），并将所有的网络流量通过该接口发送到Clash代理客户端。这种模式适用于需要对所有网络流量进行代理的情况，包括UDP和TCP流量。
     - TUN-混合模式(UDP-TUN,TCP-转发)
+    
       - > 信息来源:ChatGPT
         >
         > 这种模式结合了TUN模式和转发模式。UDP流量将通过TUN接口发送到Clash代理客户端，而TCP流量将通过转发方式发送到Clash代理客户端。这种模式适用于需要同时代理UDP和TCP流量的场景。
 - Fake-IP
     - 增强模式
+    
       - > 信息来源:[常规设置 · vernesong/OpenClash Wiki (github.com)](https://github.com/vernesong/OpenClash/wiki/常规设置)
         >
         > 客户端进行通讯时会先进行DNS查询目标IP地址，拿到查询结果后再尝试进行连接。
@@ -160,17 +159,21 @@ PassWall,Bypass,SSR-Plus,OpenClash,PassWall2,VSSR (Hello World)之类的==全部
         > 此时客户端立即向Fake-IP发起的请求会被快速响应，节约了一次本地向DNS服务器查询的时间。
         >
         > 实际效果：客户端响应速度加快，浏览体验更加顺畅，减轻网页加载时间过长的情况。
+        
       - > 信息来源:ChatGPT
         >
         > 在此模式下，OpenClash会使用IP包的伪装技术，将所有的网络流量发送到Clash代理客户端。Clash会修改源IP和目标IP，以实现代理功能。这种模式适用于需要伪装IP地址的场景，以绕过一些网络限制。
     - TUN模式
+    
       - > 信息来源:[常规设置 · vernesong/OpenClash Wiki (github.com)](https://github.com/vernesong/OpenClash/wiki/常规设置)
         >
         > 此模式与Fake-IP（增强）模式类似，不同在于能够代理使用域名的UDP链接。
+      
       - > 信息来源:ChatGPT
         >
         > 与Redir-Host模式中的TUN模式类似，OpenClash会创建一个虚拟网络接口（TUN接口），并将所有的网络流量通过该接口发送到Clash代理客户端。这种模式适用于需要对所有网络流量进行代理的情况，包括UDP和TCP流量。
     - TUN-混合模式(UDP-TUN,TCP-转发)
+    
       - > 信息来源:ChatGPT
         >
         > 这种模式结合了TUN模式和转发模式。UDP流量将通过TUN接口发送到Clash代理客户端，而TCP流量将通过转发方式发送到Clash代理客户端。这种模式适用于需要同时代理UDP和TCP流量的场景。

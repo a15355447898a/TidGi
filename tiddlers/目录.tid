@@ -1,6 +1,6 @@
 created: 20230313120449634
 creator: 孙文彬
-modified: 20230812015454602
+modified: 20230812020434518
 modifier: a15355447898a
 tags: 
 title: 目录
@@ -16,13 +16,11 @@ DONE
 
 * [[tor(firefox)浏览器中实现edge的侧边标签栏，同时把顶栏去掉(新)]]
 
+* [[搭建软路由(Markdown)]]
+
 TODO
 
 * [[对傲腾硬盘的思考]]
-
-* [[玩转软路由的前置知识]]
-
-* [[搭建软路由(由Markdown转发来的TiddlyWiki)]]
 
 * [[搭建All In One服务器]]
 
